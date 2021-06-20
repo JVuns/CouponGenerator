@@ -13,6 +13,7 @@
 #include "genCode.h"
 #include "hashTableBucket.h"
 #include "hashTableLL.h"
+#include "hashLin.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ using namespace std;
 int main(int argc, char** argv) {
 	HashTableBucket nameVAr;
 	HashTableLL nameLL;
+	HashTableLin nameLin;
 	bool running;
 	running = true;
 	while(running){
@@ -53,7 +55,20 @@ int main(int argc, char** argv) {
 				break;
 			}
 			case 2:{
-				cout<<"title";
+				string val;
+				int num;
+				cout<<"Insert value: ";
+				cin>>val;
+				cout<<endl<<"Insert number of coupons: ";
+				cin>>num;
+				char *array[num];
+				for(int i = 0; i<num; i++){
+					auto a = generateCode();
+					cout<<endl<<a<<endl;
+					nameLL.insertData(a, val);
+					nameLL.findNode(a);
+				}
+				HashTableBucket nameVAr;
 				break;
 			}
 			case 3:{
@@ -85,8 +100,15 @@ int main(int argc, char** argv) {
     			break;
 			}
 			case 5:{
-				
-				break;
+				string input;
+				cout<<"Enter coupon code ";
+				cin>>input;
+				char* char_arr;
+			    string str_obj(input);
+    			char_arr = &str_obj[0];
+    			nameLin.findNode(char_arr);
+    			cout<<endl;
+    			break;
 			}
 			case 6:{
 				string input;
