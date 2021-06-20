@@ -3,6 +3,7 @@
 #include <time.h>
 #include <list>
 #include <string>	 
+#include <thread>
 #include <sys/time.h>
 #define CodeNum 12
 #define Multiplier 12
@@ -102,6 +103,10 @@ int main(){
 	cout<<hashTable[Hash(generateCode(), SIZE)]<<" address is "<<Hash(generateCode(), SIZE)<<endl;
 	HashTable nameVAr;
 	
+	for(int i = 0; i<4; i++){
+		cout<<generateCode()<<endl;
+		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+	}
 	//Static test
 	char t[] = "ABWD1234AAWSDA";
 	char t1[] = "ADWAWW5AF";
