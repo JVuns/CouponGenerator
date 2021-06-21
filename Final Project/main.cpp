@@ -62,6 +62,7 @@ int main(int argc, char** argv) {
 					cout<<endl<<a<<endl;
 					nameVAr.insertData(a, val);
 					nameVAr.findNode(a);
+					this_thread::sleep_for(chrono::milliseconds(1));
 					
 				}
 				break;
@@ -88,6 +89,7 @@ int main(int argc, char** argv) {
 					cout<<endl<<a<<endl;
 					nameLL.insertData(a, val);
 					nameLL.findNode(a);
+					this_thread::sleep_for(chrono::milliseconds(1));
 					}
 				break;
 			}
@@ -113,6 +115,7 @@ int main(int argc, char** argv) {
 					cout<<endl<<a<<endl;
 					nameLL.insertData(a, val);
 					nameLL.findNode(a);
+					this_thread::sleep_for(chrono::milliseconds(1));
 				}
 				break;
 			}
@@ -172,10 +175,11 @@ int main(int argc, char** argv) {
 				auto a = generateCode();
 				for(int i = 0; i<num; i++){
 					a = generateCode();
-					cout<<endl<<a<<endl;
+					cout<<endl<<"the generated key for this iteration of iteration " << i << " is "<<a<<endl;
 					nameVArt.insertData(a, val);
 					nameLLt.insertData(a, val);
 					nameLint.insertData(a, val);
+					this_thread::sleep_for(chrono::milliseconds(1));
 				}
 				cout<<"\nout: \n";
 				char* char_arr;
@@ -198,7 +202,7 @@ int main(int argc, char** argv) {
     			auto end2 = chrono::steady_clock::now();
     			double time2 = double(chrono::duration_cast<chrono::nanoseconds>(end2-start2).count());
     			cout<<endl;
-    			cout<<"runtime for linked lin res search: "<<time2<<"ns"<<endl;
+    			cout<<"runtime for linear probe res search: "<<time2<<"ns"<<endl;
     			cout<<endl;
 				break;
 			}
