@@ -13,8 +13,6 @@
 #include "genCode.h"
 #include "hashTableBucket.h"
 #include "hashTableLL.h"
-#include "hashLin.h"
-#include "hashlin.h"
 
 using namespace std;
 
@@ -23,7 +21,6 @@ using namespace std;
 int main(int argc, char** argv) {
 	HashTableBucket nameVAr;
 	HashTableLL nameLL;
-	HashTableLin nameLin;
 	bool running;
 	running = true;
 	while(running){
@@ -43,52 +40,20 @@ int main(int argc, char** argv) {
 				int num;
 				cout<<"Insert value: ";
 				cin>>val;
-				bool wrong = true;
-				while (wrong){
-					cout<<endl<<"Insert number of coupons: ";
-					cin>>num;
-					if(num>SIZE){
-						cout<<"It is over the hash size, try another number";
-					}
-					else{
-						break;
-					}
-				}
+				cout<<endl<<"Insert number of coupons: ";
+				cin>>num;
 				char *array[num];
 				for(int i = 0; i<num; i++){
 					auto a = generateCode();
 					cout<<endl<<a<<endl;
 					nameVAr.insertData(a, val);
 					nameVAr.findNode(a);
-					
 				}
+				HashTableBucket nameVAr;
 				break;
 			}
 			case 2:{
-				string val;
-				int num;
-				cout<<"Insert value: ";
-				cin>>val;
-				cout<<endl<<"Insert number of coupons: ";
-				cin>>num;
-				bool wrong = true;
-				while (wrong){
-					cout<<endl<<"Insert number of coupons: ";
-					cin>>num;
-					if(num>SIZE){
-						cout<<"It is over the hash size, try another number";
-					}
-					else{
-						break;
-					}
-				}
-				char *array[num];
-				for(int i = 0; i<num; i++){
-					auto a = generateCode();
-					cout<<endl<<a<<endl;
-					nameLL.insertData(a, val);
-					nameLL.findNode(a);
-					}
+				cout<<"title";
 				break;
 			}
 			case 3:{
@@ -96,17 +61,8 @@ int main(int argc, char** argv) {
 				int num;
 				cout<<"Insert value: ";
 				cin>>val;
-				bool wrong = true;
-				while (wrong){
-					cout<<endl<<"Insert number of coupons: ";
-					cin>>num;
-					if(num>SIZE){
-						cout<<"It is over the hash size, try another number";
-					}
-					else{
-						break;
-					}
-				}
+				cout<<endl<<"Insert number of coupons: ";
+				cin>>num;
 				char *array[num];
 				for(int i = 0; i<num; i++){
 					auto a = generateCode();
@@ -114,6 +70,7 @@ int main(int argc, char** argv) {
 					nameLL.insertData(a, val);
 					nameLL.findNode(a);
 				}
+				HashTableBucket nameVAr;
 				break;
 			}
 			case 4:{
@@ -128,15 +85,8 @@ int main(int argc, char** argv) {
     			break;
 			}
 			case 5:{
-				string input;
-				cout<<"Enter coupon code ";
-				cin>>input;
-				char* char_arr;
-			    string str_obj(input);
-    			char_arr = &str_obj[0];
-    			nameLin.findNode(char_arr);
-    			cout<<endl;
-    			break;
+				
+				break;
 			}
 			case 6:{
 				string input;
@@ -154,44 +104,31 @@ int main(int argc, char** argv) {
 				int num;
 				cout<<"Insert value: ";
 				cin>>val;
-				bool wrong = true;
-				while (wrong){
-					cout<<endl<<"Insert number of coupons: ";
-					cin>>num;
-					if(num>SIZE){
-						cout<<"It is over the hash size, try another number";
-					}
-					else{
-						break;
-					}
-				}
+				cout<<endl<<"Insert number of coupons: ";
+				cin>>num;
 				char *array[num];
-				auto a = generateCode();
 				for(int i = 0; i<num; i++){
-					a = generateCode();
+					auto a = generateCode();
 					cout<<endl<<a<<endl;
 					nameVAr.insertData(a, val);
 					nameLL.insertData(a, val);
 				}
+				string input;
+				cout<<"Enter coupon code ";
+				cin>>input;
 				char* char_arr;
+			    string str_obj(input);
+    			char_arr = &str_obj[0];
     			auto start = chrono::steady_clock::now();
-    			cout<<endl;
-    			nameVAr.findNode(a);
+    			nameVAr.findNode(char_arr);
     			auto end = chrono::steady_clock::now();
     			double time = double(chrono::duration_cast<chrono::nanoseconds>(end-start).count());
     			cout<<"runtime for bucket res search: "<<time<<"ns"<<endl;
     			auto start1 = chrono::steady_clock::now();
-    			cout<<endl;
-    			nameLL.findNode(a);
+    			nameLL.findNode(char_arr);
     			auto end1 = chrono::steady_clock::now();
     			double time1 = double(chrono::duration_cast<chrono::nanoseconds>(end1-start1).count());
     			cout<<"runtime for linked list res search: "<<time1<<"ns"<<endl;
-    			cout<<endl;
-    			auto start2 = chrono::steady_clock::now();
-    			nameLin.findNode(a);
-    			auto end2 = chrono::steady_clock::now();
-    			double time2 = double(chrono::duration_cast<chrono::nanoseconds>(end2-start2).count());
-    			cout<<"runtime for linked lin res search: "<<time2<<"ns"<<endl;
     			cout<<endl;
 				break;
 			}
