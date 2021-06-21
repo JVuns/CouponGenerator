@@ -172,6 +172,7 @@ int main(int argc, char** argv) {
 					cout<<endl<<a<<endl;
 					nameVAr.insertData(a, val);
 					nameLL.insertData(a, val);
+					nameLin.insertData(a, val);
 				}
 				char* char_arr;
     			auto start = chrono::steady_clock::now();
@@ -179,6 +180,7 @@ int main(int argc, char** argv) {
     			nameVAr.findNode(a);
     			auto end = chrono::steady_clock::now();
     			double time = double(chrono::duration_cast<chrono::nanoseconds>(end-start).count());
+    			cout<<endl;
     			cout<<"runtime for bucket res search: "<<time<<"ns"<<endl;
     			auto start1 = chrono::steady_clock::now();
     			cout<<endl;
@@ -191,6 +193,7 @@ int main(int argc, char** argv) {
     			nameLin.findNode(a);
     			auto end2 = chrono::steady_clock::now();
     			double time2 = double(chrono::duration_cast<chrono::nanoseconds>(end2-start2).count());
+    			cout<<endl;
     			cout<<"runtime for linked lin res search: "<<time2<<"ns"<<endl;
     			cout<<endl;
 				break;
