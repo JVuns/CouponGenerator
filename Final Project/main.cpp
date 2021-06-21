@@ -7,7 +7,7 @@
 #include <thread>
 #define CodeNum 12
 #define Multiplier 12
-#define SIZE 3
+#define SIZE 100
 #include "hash.h"
 #include "node.h"
 #include "genCode.h"
@@ -28,6 +28,7 @@ int main(int argc, char** argv) {
 	running = true;
 	while(running){
 		int a;
+		cout<<endl;
 		cout<<"Choose an option"<<endl;
 		cout<<"1. Bucket hashing"<<endl;
 		cout<<"2. Linear probe"<<endl;
@@ -69,8 +70,6 @@ int main(int argc, char** argv) {
 				int num;
 				cout<<"Insert value: ";
 				cin>>val;
-				cout<<endl<<"Insert number of coupons: ";
-				cin>>num;
 				bool wrong = true;
 				while (wrong){
 					cout<<endl<<"Insert number of coupons: ";
@@ -174,6 +173,7 @@ int main(int argc, char** argv) {
 					nameLL.insertData(a, val);
 					nameLin.insertData(a, val);
 				}
+				cout<<"out";
 				char* char_arr;
     			auto start = chrono::steady_clock::now();
     			cout<<endl;

@@ -6,8 +6,8 @@
 #include <sys/time.h>
 #define CodeNum 12
 #define Multiplier 12
-#define SIZE 3
 #define BUCKET_LIM 2
+#define SIZE 100
 #include "node.h"
 #include "hash.h"
 #include "genCode.h"

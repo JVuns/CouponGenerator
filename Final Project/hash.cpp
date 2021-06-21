@@ -6,7 +6,6 @@
 #include <sys/time.h>
 #define CodeNum 12
 #define Multiplier 12
-#define SIZE 3
 #include "hash.h"
 
 using namespace std;
