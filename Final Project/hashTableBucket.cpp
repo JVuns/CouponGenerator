@@ -104,5 +104,4 @@ HashTableBucket::findNode(char* address){
 	{
 		cout << "not found in the hashTable.";
 	}
-	
 }

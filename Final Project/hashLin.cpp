@@ -30,7 +30,7 @@ HashTableLin::insertData(char* k, string val){
 		cout<<"already occupied will try finding another empty index"<<endl;
 		int curIndex = keyv;
 		keyv++;
-		if (keyv > 2)
+		if (keyv > SIZE-1)
 		{
 			keyv = 0;
 		}
@@ -47,7 +47,7 @@ HashTableLin::insertData(char* k, string val){
 			else
 			{
 				keyv++;
-				if (keyv > 2)
+				if (keyv > SIZE-1)
 				{
 					keyv = 0;
 				}
@@ -66,7 +66,7 @@ HashTableLin::findNode(char* address){
 		cout << arr[rAddress]->value; 
 	}
 	rAddress++;
-	if (rAddress > 2)
+	if (rAddress > SIZE-1)
 	{
 		rAddress = 0;
 	}
@@ -80,7 +80,7 @@ HashTableLin::findNode(char* address){
 		else
 		{
 			rAddress++;
-			if (rAddress > 2)
+			if (rAddress > SIZE-1)
 			{
 				rAddress = 0;
 			}

@@ -173,7 +173,7 @@ int main(int argc, char** argv) {
 					nameLL.insertData(a, val);
 					nameLin.insertData(a, val);
 				}
-				cout<<"out";
+				cout<<"\nout: \n";
 				char* char_arr;
     			auto start = chrono::steady_clock::now();
     			cout<<endl;
@@ -187,7 +187,7 @@ int main(int argc, char** argv) {
     			nameLL.findNode(a);
     			auto end1 = chrono::steady_clock::now();
     			double time1 = double(chrono::duration_cast<chrono::nanoseconds>(end1-start1).count());
-    			cout<<"runtime for linked list res search: "<<time1<<"ns"<<endl;
+    			cout<<"\nruntime for linked list res search: "<<time1<<"ns"<<endl;
     			cout<<endl;
     			auto start2 = chrono::steady_clock::now();
     			nameLin.findNode(a);
