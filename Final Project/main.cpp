@@ -37,6 +37,7 @@ int main(int argc, char** argv) {
 		cout<<"5. Search (probe)"<<endl;
 		cout<<"6. Search (LL)"<<endl;
 		cout<<"7. Time Plot"<<endl;
+		cout<<"8. Exit"<<endl;
 		cin>>a;
 		switch(a){
 			case 1:{
@@ -149,6 +150,9 @@ int main(int argc, char** argv) {
     			break;
 			}
 			case 7:{
+				HashTableBucket nameVArt;
+				HashTableLL nameLLt;
+				HashTableLin nameLint;
 				string val;
 				int num;
 				cout<<"Insert value: ";
@@ -169,33 +173,38 @@ int main(int argc, char** argv) {
 				for(int i = 0; i<num; i++){
 					a = generateCode();
 					cout<<endl<<a<<endl;
-					nameVAr.insertData(a, val);
-					nameLL.insertData(a, val);
-					nameLin.insertData(a, val);
+					nameVArt.insertData(a, val);
+					nameLLt.insertData(a, val);
+					nameLint.insertData(a, val);
 				}
 				cout<<"\nout: \n";
 				char* char_arr;
     			auto start = chrono::steady_clock::now();
     			cout<<endl;
-    			nameVAr.findNode(a);
+    			nameVArt.findNode(a);
     			auto end = chrono::steady_clock::now();
     			double time = double(chrono::duration_cast<chrono::nanoseconds>(end-start).count());
     			cout<<endl;
     			cout<<"runtime for bucket res search: "<<time<<"ns"<<endl;
     			auto start1 = chrono::steady_clock::now();
     			cout<<endl;
-    			nameLL.findNode(a);
+    			nameLLt.findNode(a);
     			auto end1 = chrono::steady_clock::now();
     			double time1 = double(chrono::duration_cast<chrono::nanoseconds>(end1-start1).count());
     			cout<<"\nruntime for linked list res search: "<<time1<<"ns"<<endl;
     			cout<<endl;
     			auto start2 = chrono::steady_clock::now();
-    			nameLin.findNode(a);
+    			nameLint.findNode(a);
     			auto end2 = chrono::steady_clock::now();
     			double time2 = double(chrono::duration_cast<chrono::nanoseconds>(end2-start2).count());
     			cout<<endl;
     			cout<<"runtime for linked lin res search: "<<time2<<"ns"<<endl;
     			cout<<endl;
+				break;
+			}
+			case 8:{
+				cout << "\nThanks for using our program :D";
+				running = false;
 				break;
 			}
 		}
