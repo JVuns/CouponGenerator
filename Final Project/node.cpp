@@ -1,11 +1,5 @@
 #include <iostream>
-#include <chrono>
-#include <time.h>
-#include <list>
-#include <string>	 
-#include <sys/time.h>
-#define CodeNum 12
-#define Multiplier 12
+#include <string>
 #include "node.h"
 
 using namespace std;

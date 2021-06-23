@@ -1,16 +1,9 @@
 #include <iostream>
-#include <chrono>
-#include <time.h>
 #include <list>
 #include <string>	 
-#include <sys/time.h>
-#define CodeNum 12
-#define Multiplier 12
-#define BUCKET_LIM 2
 #define SIZE 100
 #include "node.h"
 #include "hash.h"
-#include "genCode.h"
 #include "hashLin.h"
 
 using namespace std;

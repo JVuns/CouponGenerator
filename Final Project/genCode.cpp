@@ -1,11 +1,9 @@
 #include <iostream>
-#include <chrono>
 #include <time.h>
 #include <list>
 #include <string>	 
 #include <sys/time.h>
-#define CodeNum 12
-#define Multiplier 12
+#define CodeNum 16
 #include "genCode.h"
 
 using namespace std;

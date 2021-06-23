@@ -3,10 +3,7 @@
 #include <time.h>
 #include <list>
 #include <string>	 
-#include <sys/time.h>
 #include <thread>
-#define CodeNum 12
-#define Multiplier 12
 #define SIZE 100
 #include "hash.h"
 #include "node.h"
@@ -17,8 +14,6 @@
 #include "hashlin.h"
 
 using namespace std;
-
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char** argv) {
 	HashTableBucket nameVAr;
