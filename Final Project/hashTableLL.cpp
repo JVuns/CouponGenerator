@@ -11,6 +11,7 @@ using namespace std;
 HashTableLL::insertData(char* k, string val){
 	int keyv = Hash(k, SIZE);
 	isEmpty = false;
+	// no need to check the if it is unique if this is empty since that means that the index is always gonna be computed using a fixed formula
 	if(arr[keyv] == 0)
 	isEmpty = true;
 	if(isEmpty){
@@ -24,13 +25,19 @@ HashTableLL::insertData(char* k, string val){
 		cout<<"linking another node to the linked list"<<endl;
 		auto temp = arr[keyv];
 		while(!isEmpty){
-			if(temp->next == NULL){
+			// no need to checked in here too.
+			if(temp->next == NULL && temp->key != k){
 				auto aNode = new Node(k, val);
 				aNode->next = NULL;
 				temp->next = aNode;
 				isEmpty = true;
 			}
 			else{
+				// checks if the this is not a dupe key
+				if (temp->key == k)
+				{
+					break;
+				}
 				temp = temp->next;	
 			}
 		}

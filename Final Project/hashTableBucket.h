@@ -13,11 +13,23 @@ struct Bucket
 {
 	struct Node* arr[3] = {NULL, NULL, NULL};
 	int curIndex = 0;
+	bool nondup;
 	
 	void insert(Node* aNode)
 	{	
+		nondup = true;
+		int iter;
+		// checks whether the key is not a duplicate. Will not be inserted if it is a duplicate.
+		for (iter = 0; iter < curIndex; iter++)
+		{
+			if (arr[iter]->key == aNode->key)
+			{
+				nondup = false;
+			}
+		}
+		
 		// if it is not full
-		if (curIndex < 3)
+		if (curIndex < 3 && nondup == true)
 		{	
 			arr[curIndex] = aNode;
 			curIndex++;

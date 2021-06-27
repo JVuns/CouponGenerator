@@ -9,10 +9,12 @@
 using namespace std;
 
 HashTableLin::insertData(char* k, string val){
+	bool nondup = true;
 	int keyv = Hash(k, SIZE);
 	isEmpty = false;
 	if(arr[keyv] == 0)
 	isEmpty = true;
+	// don't need to check if it is a dupe while this is empty from the start
 	if(isEmpty){
 		auto aNode = new Node(k, val); //create new node
 		aNode->key = k;
@@ -28,7 +30,7 @@ HashTableLin::insertData(char* k, string val){
 			keyv = 0;
 		}
 		while(keyv != curIndex){
-			if (arr[keyv] == 0)
+			if (arr[keyv] == 0 && nondup)
 			{
 				auto aNode = new Node(k, val); //create new node
 				aNode->key = k;
@@ -39,6 +41,12 @@ HashTableLin::insertData(char* k, string val){
 			}
 			else
 			{
+				// checks if it the current occupied element is a nondup of the key
+				if (arr[keyv]->key == k)
+				{
+					nondup = false;
+				}
+				
 				keyv++;
 				if (keyv > SIZE-1)
 				{
