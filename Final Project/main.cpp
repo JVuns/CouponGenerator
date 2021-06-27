@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
 	HashTableLin nameLin;
 	bool running;
 	running = true;
-	while(running){
+	while(running){ //drive menu
 		int a;
 		cout<<endl;
 		cout<<"Choose an option"<<endl;
@@ -34,7 +34,7 @@ int main(int argc, char** argv) {
 		cout<<"7. Time Plot"<<endl;
 		cout<<"8. Exit"<<endl;
 		cin>>a;
-		switch(a){
+		switch(a){ 
 			case 1:{
 				string val;
 				int num;
